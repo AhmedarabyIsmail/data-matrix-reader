@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+backend/templates/*.png
+backend/templates/templates.json
+backend/backend/templates/
+backend/uploads/
+.cursor/hooks/state/
+frontend/node_modules/
+frontend/dist/
+.DS_Store
