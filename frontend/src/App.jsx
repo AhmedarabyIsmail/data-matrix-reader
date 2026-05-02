@@ -146,7 +146,20 @@ export default function App() {
             <div className={`run-state ${runState}`}>{isBusy ? "Processing..." : runMessage}</div>
           </div>
 
-          <ImageRoiCanvas imageUrl={shownImage} detectionBox={result?.bounding_box} onRoiChange={setRoi} />
+          <ImageRoiCanvas
+            imageUrl={shownImage}
+            detectionBox={result?.bounding_box}
+            inspectionOverlay={
+              result
+                ? {
+                    status: result.status,
+                    processingTimeMs: result.processing_time_ms,
+                    decodedData: result.decoded_data
+                  }
+                : null
+            }
+            onRoiChange={setRoi}
+          />
         </div>
       </section>
 
